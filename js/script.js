@@ -111,9 +111,9 @@ function getRandomColor() {
 	var red2 = Math.floor((Math.random() * 255) + 1 );
 	var green2 = Math.floor((Math.random() * 255) + 1 );
 	var blue2 = Math.floor((Math.random() * 255) + 1 );
-	var rgb1 = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
-	var rgb2 = 'rgb(' + red2 + ', ' + green2 + ', ' + blue2 + ')';
-	var gradient = 'linear-gradient(to bottom right, ' + rgb1 + ', ' + rgb2 + ')';
+	var rgb1 = `rgb(${red}, ${green}, ${blue})`;
+	var rgb2 = `rgb(${red2}, ${green2},${blue2})`;
+	var gradient = `linear-gradient(to bottom right, ${rgb1}, ${rgb2})`;
 	return gradient;
 }
 
@@ -131,16 +131,16 @@ function backgroundGradient() {
 function printQuote() {
 	var randomQuote = getRandomQuote(quotes);
 	var stringOfQuoteProperties = "";
-	stringOfQuoteProperties += '<p class="quote">' + randomQuote.quote + '</p><p class="source">' + randomQuote.source
+	stringOfQuoteProperties += `<p class="quote">${randomQuote.quote}</p><p class="source">${randomQuote.source}`
 
 	if (randomQuote.citation != null) {
-  		stringOfQuoteProperties += '<span class="citation">' + randomQuote.citation + '</span>'
+  		stringOfQuoteProperties += `<span class="citation">${randomQuote.citation}</span>`
   	}
 	if (randomQuote.year != null) {
-  		stringOfQuoteProperties += '<span class="year">' + randomQuote.year + '</span>'
+  		stringOfQuoteProperties += `<span class="year">${randomQuote.year}</span>`
   	}
 
-	stringOfQuoteProperties += '</p>'
+	stringOfQuoteProperties += `</p>`
 
 	backgroundGradient();
 	document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
