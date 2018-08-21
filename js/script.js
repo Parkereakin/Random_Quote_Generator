@@ -2,7 +2,7 @@
 
 
 // Array of quotes as objects
-var quotes = [
+const quotes = [
 	{
 		quote: "I love you the more in that I believe you had liked me for my own sake and for nothing else.",
 		source: "John Keats"
@@ -97,30 +97,30 @@ var quotes = [
 
 // The getRandomQuuote function accepts array, gets random number, and returns array item with random number
 function getRandomQuote(array) {
-	var num = Math.round(Math.random() * array.length );
-	var selectedQuote = array[num];
+	const num = Math.round(Math.random() * array.length );
+	const selectedQuote = array[num];
 	return selectedQuote;
 }
 
 
 // The getRandomColor function gets random numbers to create random rgb colors, and returns rgb colors
 function getRandomColor() {
-	var red = Math.floor((Math.random() * 255) + 1 );
-	var green = Math.floor((Math.random() * 255) + 1 );
-	var blue = Math.floor((Math.random() * 255) + 1 );
-	var red2 = Math.floor((Math.random() * 255) + 1 );
-	var green2 = Math.floor((Math.random() * 255) + 1 );
-	var blue2 = Math.floor((Math.random() * 255) + 1 );
-	var rgb1 = `rgb(${red}, ${green}, ${blue})`;
-	var rgb2 = `rgb(${red2}, ${green2},${blue2})`;
-	var gradient = `linear-gradient(to bottom right, ${rgb1}, ${rgb2})`;
+	const red = Math.floor((Math.random() * 255) + 1 );
+	const green = Math.floor((Math.random() * 255) + 1 );
+	const blue = Math.floor((Math.random() * 255) + 1 );
+	const red2 = Math.floor((Math.random() * 255) + 1 );
+	const green2 = Math.floor((Math.random() * 255) + 1 );
+	const blue2 = Math.floor((Math.random() * 255) + 1 );
+	const rgb1 = `rgb(${red}, ${green}, ${blue})`;
+	const rgb2 = `rgb(${red2}, ${green2},${blue2})`;
+	const gradient = `linear-gradient(to bottom right, ${rgb1}, ${rgb2})`;
 	return gradient;
 }
 
 
 // The backgroundGradient funtion loads new background color
 function backgroundGradient() {
-	var backgroundColor = getRandomColor();
+	const backgroundColor = getRandomColor();
 
 	document.getElementById('container').style.backgroundImage = backgroundColor;
 	
@@ -129,8 +129,8 @@ function backgroundGradient() {
 
 // The printQuote funtion loads new quote-box
 function printQuote() {
-	var randomQuote = getRandomQuote(quotes);
-	var stringOfQuoteProperties = "";
+	const randomQuote = getRandomQuote(quotes);
+	let stringOfQuoteProperties = "";
 	stringOfQuoteProperties += `<p class="quote">${randomQuote.quote}</p><p class="source">${randomQuote.source}`
 
 	if (randomQuote.citation != null) {
